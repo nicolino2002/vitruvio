@@ -1,0 +1,250 @@
+<html>
+
+  <head>
+    <meta charset="utf-8">
+
+    <title>Registrazione</title>
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+    <link href="./css/grid.css" rel="stylesheet">
+    <link href="./css/signin.css" rel="stylesheet">
+
+
+    <style>
+      table
+      {
+        width: 100%;
+        margin: 0%;
+      }
+
+
+      td
+      {
+        vertical-align: middle;
+        padding: 10px 15px ;
+        height: 5%
+
+
+      }
+
+
+      .cont-page
+      {
+        margin-left: 10%;
+        margin-right: 10%;
+        margin-top: 5%;
+        margin: 5% auto;
+        width: 1600px;
+        background-color: white;
+
+      }
+
+      .campo
+      {
+        height: 100%;
+      }
+
+
+
+    </style>
+
+  </head>
+<!--https://getbootstrap.com/docs/5.0/getting-started/introduction/#starter-template-->
+<!--https://getbootstrap.com/docs/5.0/forms/overview/-->
+<!--https://getbootstrap.com/docs/5.0/forms/validation/#server-side-->
+  <body>
+
+
+
+    <nav class="navbar fixed-top navbar-dark " style="flex-wrap:nowrap;background-color:#6592ba">
+
+      <div style="margin:1%;"><a class="navbar-brand" href="https://www.infowaste.it/"> <img src="./img/logo2.png" height="100" width="240" > </a></div>
+
+      <!--<div style="margin:1%;"><a class="navbar-brand" href="index.html"><button type="submit" id="Accedi"  class="btn btn-lg btn-primary" style="background-color: #004993;border-radius: 15px;" >Accedi</button></a></div>-->
+
+    </nav>
+
+
+
+
+    <!--<table class="table" width="100%">-->
+    <div class="form-signin"  style=" margin-top: 15%;max-width: 500px;">
+
+      <form action="./php/user_req.php" id="new_user"  method = "post" onsubmit="return send()">
+        <table style="width: 100%">
+
+
+         <tr>
+           <td>
+             <h1 class="h1" style="text-align:center;color:#004993;font-weight: bold;">Registrazione<br>Supporto PEF 2021</h1>
+           </td>
+         </tr>
+
+         <tr>
+           <td>
+             <label class="visually" for="reg" style="color: grey;">Regione: </label>
+             <select id="reg" class="form-select" name="reg" onchange="get_prov_new(this);" autofocus>
+               <option value="">Please Select</option>
+             </select>
+             <small id="reg_error_message">&nbsp;</small>
+          </td>
+        </tr>
+
+          <tr>
+          <td>
+             <label class="visually" for="prov" style="color: grey;">Provincia: </label>
+              <select id="prov" class="form-select" name="prov" onchange="get_town_new(this)" disabled="true"  autofocus>
+                <option value="">Please Select</option>
+              </select>
+              <small id="prov_error_message"> &nbsp; </small>
+            </td>
+          </tr>
+
+            <tr>
+            <td>
+             <label class="visually" for="town" style="color: grey;"> Comune: </label>
+              <select id="town" class="form-select" name="town" disabled="true"  autofocus>
+                <option value="">Please Select</option>
+              </select>
+              <small id="town_error_message"> &nbsp; </small>
+            </td>
+         </tr>
+
+
+         <tr>
+           <td>
+             <label for="name" class="visually" style="color: grey;">Nome del Referente: </label>
+             <input type="text" id="name" name = "name" class="form-control"  autofocus></input>
+             <small id="name_error_message"> &nbsp; </small>
+           </td>
+           </tr>
+
+           <tr>
+             <td>
+               <label for="surname" style="color: grey;">Cognome del Referente: </label>
+               <input type="text" id="surname" name = "surname" class="form-control"  autofocus></input>
+               <small id="surname_error_message"> &nbsp; </small>
+            </td>
+         </tr>
+
+
+         <!--titolo Referente-->
+         <tr>
+           <td>
+             <label for="title" style=" color: grey;">Titolo: </label>
+             <select id="title" class="form-select" name="title" onchange="get_next(this); " autofocus>
+               <option value="">Please Select</option>
+             </select>
+             <small id="title_error_message"> &nbsp; </small>
+           </td>
+         </tr>
+
+
+         <tr>
+           <td>
+             <label for="tel" style=" color: grey;">Telefono: </label>
+             <input type="tel" id="tel" name = "tel" class="form-control"  autofocus></input>
+             <small id="tel_error_message"> &nbsp; </small>
+           </td>
+         </tr>
+
+
+
+
+         <!--eMail Referente-->
+        <tr>
+          <td>
+            <label for="email" style="color: black;">eMail (Account): </label>
+            <input type="text" id="email" name = "account" class="form-control" ></input>
+            <small id="email_error_message"> &nbsp;  </small>
+         </td>
+       </tr>
+
+          <!--eMail 2 Referente-->
+          <tr>
+            <td>
+               <label for="email2" >Seconda eMail (Opzionale): </label>
+               <input type="text" id="email2" name = "email2" class="form-control"></input>
+               <small id="email2_error_message"> &nbsp;  </small>
+            </td>
+          </tr>
+
+
+         <!--Password Referente-->
+         <tr>
+           <td>
+             <label for="password" style=" color: grey;">Password: </label>
+              <input type="password" id="password" name = "password" class="form-control" oncopy="return false;" ></input>
+               <small id="password_error_message"> &nbsp;  </small>
+           </td>
+           </tr>
+         <!--Conferma Password Referente-->
+         <tr>
+           <td>
+             <label for="confpassword" style="color: grey;">Conferma Password: </label>
+              <input  type="password" id="confpassword" name = "password" class="form-control" ></input>
+             <small id="conf_password_error_message"> &nbsp; </small>
+           </td>
+         </tr>
+
+
+         <tr>
+           <td>
+             <div style="width:100%">
+
+             <input class="form-check-input" type="checkbox" value="1" name = "service" id="service" disabled>
+             <label for="service">Accetto<a id="s_check" href="Rev01_CONDIZIONI_USO_DEL SERVIZIO.pdf" class="link-primary" target="_blank"> Informativa Uso del Servizio</a></label><p>
+             <small id="service_error"> &nbsp; </small>
+           </div>
+            </td>
+
+
+
+         </tr>
+
+
+         <tr>
+           <td>
+             <input class="form-check-input" type="checkbox" value="1" name = "privacy" id="privacy" disabled>
+             <label for="privacy">Accetto <a id="p_check" href="BINTOBIT_informativa_privacy.pdf" class="link-primary" target="_blank"> Informativa sulla Privacy</a></label><p>
+             <small id="privacy_error"> &nbsp; </small>
+           </td>
+         </tr>
+
+
+            <tr>
+                <td>
+                <p><input class="form-check-input" type="checkbox" value="1" name = "receipt" id="receipt">
+                <label for="receipt" style="font-weight: bold;">Richiedo via eMail la ricevuta della richiesta: </label></p>
+               </td>
+              </tr>
+
+         <tr>
+           <td>
+             <div style="width:100%">
+
+                  <a href="index.html"><input class="btn btn-lg btn-primary" style="background-color: #fff;color:#044A92 ;width:30%;margin:1%" type="button"  value="Indietro"></input></a>
+                  <button class="btn btn-lg btn-primary" id="inviorichiesta" style="background-color: #044A92;width:65%;margin:1%"  type="submit">Invio Richiesta</button>
+                </div>
+            </td>
+        </tr>
+
+
+           </table>
+         </form>
+       </div>
+
+
+      <hr>
+
+      <script type="text/javascript" language="javascript" src="./js/jquery.js"></script>
+      <script type="text/javascript" language="javascript" src="./js/validità_campi.js"></script>
+      <script type="text/javascript" src="./js/bootstrap.bundle.min.js"></script>
+      <script type="text/javascript" src="./js/scripts.js"></script>
+
+      <script type="text/javascript">window.onload = get_reg_new();get_title();</script>
+
+   </body>
+
+   </main>
+
+</html>

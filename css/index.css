@@ -1,0 +1,120 @@
+@import "grid.css";
+@import "signin.css";
+@import "colors.css";
+.mainform
+  {
+    width:90%;
+    height:20%;
+    margin-left:5%;
+    border-color: #044A92;
+  }
+.forms {
+      width:30%;
+      height: 100%;
+      padding:2px 5px;
+      border: 3px solid #044A92;
+      display: inline-block;
+      float: left
+      text-align:center;
+      margin:8px;
+      margin-right:30px;
+  }
+  .campo
+  {
+    padding:2px 2px;
+    height:30px;
+    width:200px;
+    margin-right: 30px;
+    v-align:middle;
+    text-align:center;
+  }
+  .send
+  {
+    height:60px;
+    padding:10px;
+    background-color: #044A92;
+    color: #ffffff;
+    width:100%;
+  }
+
+  .welcome
+  {
+    background-color: #6592ba;
+  }
+
+  .formtitle
+  {text-align: center;
+    margin-bottom: 20px;}
+
+.container-fluid
+{
+
+  background-color: white;
+
+}
+
+
+.border-07
+{
+  border: 0.7px solid #d1d1d1;
+
+}
+#help.btn
+{
+  color: white;
+  background-color: #044e8f;
+  max-width: 100%;
+  border-radius: 20px;
+  float: right;
+}
+
+#back.btn
+{
+  color: white;
+  background-color: #044e8f;
+  max-width: 100%;
+  border-radius: 20px;
+  float: right;
+}
+
+#logout.btn
+{
+  float: right;
+  color: #044e8f;
+  border: 2px solid #044e8f;
+  background-color: white;
+  max-width: 100%;
+  border-radius: 20px;
+}
+#logout.btn:hover
+{
+  color: red;
+}
+
+.fields
+{
+  max-width: 50%;
+  margin-right: 30%;
+  margin-top: 7px;
+  border:20px;
+}
+
+
+.auto
+{margin: 10% auto}
+
+.input-group
+{
+  display: inline-block;
+}
+
+.title
+{
+  background-color: red;
+}
+
+.space
+{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}

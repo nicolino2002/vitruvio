@@ -1,0 +1,28 @@
+
+:root {
+  --color-1: #ff8800;
+  --color-2: #a7e2ff;
+  --color-black: #000000;
+}
+
+
+.text-color-1{color:var(--color-1)}
+.text-color-2{color:var(--color-2)}
+
+.text-black{color: black}
+.btn-blu,.btn-blu:disabled
+{
+  color: white;
+  background-color: #044A92;
+  vertical-align:middle;
+}
+.btn-blu:hover,.btn-blu:disabled:hover
+{
+  color: white;
+  background-color: #044A92;
+  vertical-align:middle;
+}
+
+.text-red{color: red}
+.text-theme{color: #044e8f}
+.bg-theme{background-color: #044e8f}

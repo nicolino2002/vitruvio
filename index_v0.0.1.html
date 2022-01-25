@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.79.0">
+    <title>Infowaste Ver. 1.0.0</title>
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+
+    
+    <!-- Custom styles for this template -->
+    <link href="./css/signin.css" rel="stylesheet">
+  </head>
+  <body class="text-center">
+    
+<main class="form-signin">
+  <form id="login" action="./php/login.php" method = "post">
+    <img class="mb-4" src="./img/logo.jpg" alt="" width="250" height="250">
+    <h1 class="h3 mb-3 fw-normal">Accedi</h1>
+    <p>
+      <label for="inputEmail" class="visually-hidden">Indirizzo Email</label>
+      <input form="login" type="email" id="inputEmail" name = "username" class="form-control" placeholder="Indirizzo Email" required autofocus>
+    </p>
+    <p>
+      <label for="inputPassword" class="visually-hidden">Password</label>
+      <input  form="login"type="password" id="inputPassword" name = "password" class="form-control" placeholder="Password" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&#~])[A-Za-z\d@$!%*?&#~]{8,}$" required autofocus>
+    </p>
+    <p>
+      <button  form="login" class="w-100 btn btn-lg btn-primary" style="background-color: #044A92" type="submit">Sign in</button>
+    </p>
+  </form>
+  <p>
+    <button <button onclick="window.location.href='new_user.html'" class="w-100 btn btn-lg btn-primary" style="background-color: #044A92" type="submit">Nuovo Utente</button>
+    <!--<a href="new_user.html" class="link-primary">Nuovo Utente</a>-->
+  </p>
+    <p class="mt-5 mb-3 text-muted">&copy; 2021 - By Nicolas Bellomo</p>
+	<!--<a class="mt-5 mb-3 text-muted" href="mailto:nbellomo506@gmail.com">nbellomo506@gmail.com</a>-->
+</main>
+
+
+    
+  </body>
+</html>
