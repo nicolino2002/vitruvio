@@ -1,7 +1,7 @@
 <?php
-   define('DB_SERVER', '89.46.111.99');
-   define('DB_USERNAME', 'Sql1515258');
-   define('DB_PASSWORD', '4818o3c947');
-   define('DB_DATABASE', 'Sql1515258_3');
+   define('DB_SERVER', 'localhost');
+   define('DB_USERNAME', 'root');
+   define('DB_PASSWORD', '');
+   define('DB_DATABASE', 'infowaste');
    $db = mysqli_connect(DB_SERVER,DB_USERNAME,DB_PASSWORD,DB_DATABASE);
 ?>
