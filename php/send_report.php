@@ -54,7 +54,7 @@
       array(
         'subject' => 'Inviato Report del Comune di '.$town.'.',
         'to' => $to,
-        'cc' => 'assistenza@bintobit.com',
+        'cc' => 'vitruvio@bintobit.com',
         'message' => 'Si conferma in data '.$timestr.', l\'invio del report relativo al Comune di '.$town.', da parte del seguente account: '.$user.'.'
       )
     );

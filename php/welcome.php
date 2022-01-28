@@ -28,7 +28,7 @@
     <link href="../js/bootstrap.bundle.min.js">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <title>InfoWaste ver. 1.0</title>
+    <title>Vitruvio</title>
     <style media="screen">
         html {zoom: 110%;}
 
@@ -48,11 +48,14 @@
       <h3 class="ml-1">Benvenuto: <?php echo $login_name; ?></h3>
       <h3 class="ml-1">Stai operando sul PEF 2022-2025 del Comune di <?php echo $login_town; ?> con l’account <?php echo $login_user; ?> e il ruolo <?php echo $login_title; ?>.</h3>
       <?php if($new_report==0 && $status_id==3 && $sent_times>=5)echo "<h3 class='ml-1 text-red'>Il comune su cui stai operando, ha inviato il report troppe volte, contatta l'assistenza.</h3>"; ?>
-    <nav class="navbar navbar-expand-lg navbar-light " style="background-color:#d1d1d1;margin-top:2%;margin-bottom:2%;">
+    <nav class="navbar navbar-expand-lg navbar-light bg-color-2">
       <div class="container-fluid">
         <!--<a class="navbar-brand" href="#">Navbar</a>-->
         <a class="navbar-brand" href="#">
-          <div style="margin:1%; height:100%"><a class="navbar-brand" target="_blank" href="https://www.infowaste.it/"> <img src="../img/logo2.png" height="50" width="120" > </a></div>
+          <div style="margin:1%; height:100%"><a class="navbar-brand" target="_blank" href="https://www.infowaste.it/">
+            <img src="../img/Logo-Vitruvio.jpg" >
+          </a>
+        </div>
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -88,12 +91,6 @@
             </li>
           </div>
 
-
-            <div class="navbut"  <?php if ($login_role=="Normal") {echo "hidden";} ?>>
-           <li class="nav-item">
-              <a class="nav-link<?php if($new_report==1 || $status_id>2){echo ' disabled';} ?>" <?php if($new_report==0){echo 'style="color: '.$input2021.';font-weight:bold"';} ?> aria-current="page" href="./input.php?report_id=<?php echo $report_id; ?>&year=2021&username=<?php echo $login_name; ?>&account=<?php echo $login_user; ?>&town=<?php echo $login_town; ?>&title=<?php echo $login_title; ?>">E. Tavola di input 2021</a>
-            </li>
-          </div>
 
 
           <div class="navbut">
@@ -132,7 +129,7 @@
 
 
             <li class="nav-item">
-              <b class="nav-link active" aria-current="page" href="#">Status: <?php echo $status; ?></b>
+              <b class="nav-link active text-white" aria-current="page" href="#">Status: <?php echo $status; ?></b>
             </li>
           </ul>
         </div>
@@ -157,36 +154,47 @@
       <input  type="text" id="id_town" name = "id_town" class="form-control" value="<?php echo $town_id; ?>" required hidden>
       <input  type="text" id="id_report" name = "id_report" class="form-control" value="<?php if ($new_report==0) {echo $report_id;} else {echo '0';} ?>" required hidden>
 
-          <div style="width:100%">
-            <a href="./logout.php"><input class="btn btn-lg btn-primary" style="float:left;background-color: #044A92;margin:1%;" type="button" value="Logout"></a>
 
-
-                <button
-                  class=" btn btn-lg btn-primary" style="float:right;margin:1%;background-color: #044A92" type="submit"
-
-                  <?php if($new_report==0 && $status_id==2 || $status_id==1 )
-                        {
-                          if ($mtn=='red' || $mtr=='red' || $invio=='red' || $input2020=='red' || $input2021=='red' || $extra=='red') {
-                            echo "disabled";
-                          }else {
-                            echo "";
-                          }
-                        }
-                   ?>
-
-                   <?php if($new_report==1){echo '';}else{if($status_id<3){echo '';}else{echo '';}} ?>
-                   <?php if($new_report==0 && $status_id==3 && $sent_times>=5)echo "disabled"; //disattivo la possibilità di riprendere il report
-                   ?>
-                >
-                  <?php if($new_report==1){echo 'Crea Nuovo Report';}//definisco l'operazione possibile sul report
-                  else{if($status_id<3){echo 'Invia Report';}else{echo 'Riprendi Elaborazione';}} ?>
-
-              </button>
-
-            </div>
           </form>
         </div>
 
+
+
+
+        <form style="width:100%" class="d-flex" action="./<?php if($new_report==1){echo 'new_report';}else{if($status_id<3){echo 'send_report';}else{echo 'corr_report';}} ?>.php" method = "post">
+          <input  type="text" id="id_user" name = "id_user" class="form-control" value="<?php echo $user_id; ?>" required hidden>
+          <input  type="text" id="id_town" name = "id_town" class="form-control" value="<?php echo $town_id; ?>" required hidden>
+          <input  type="text" id="id_report" name = "id_report" class="form-control" value="<?php if ($new_report==0) {echo $report_id;} else {echo '0';} ?>" required hidden>
+        <div class="container">
+          <div class="row text-center">
+            <div class="col-xl-2 col-sm-6 mt-2 text-left">
+              <a href="./logout.php">
+                <button type="button" class="btn btn-lg bg-color-1 text-white w-100" name="button">Logout</button>
+              </a>
+            </div>
+
+            <div class="col-xl-2 offset-xl-8 col-sm-6 mt-2 text-right">
+              <button type="button" class="btn btn-lg bg-color-1 text-white w-100" name="button"
+                                <?php if($new_report==0 && $status_id==2 || $status_id==1 )
+                                      {
+                                        if ($mtn=='red' || $mtr=='red' || $invio=='red' || $input2020=='red' || $input2021=='red' || $extra=='red') {
+                                          echo "disabled";
+                                        }else {
+                                          echo "";
+                                        }
+                                      }
+                                 ?>
+
+                                 <?php if($new_report==1){echo '';}else{if($status_id<3){echo '';}else{echo '';}} ?>
+                                 <?php if($new_report==0 && $status_id==3 && $sent_times>=5)echo "disabled"; //disattivo la possibilità di riprendere il report
+                                 ?>
+                              >
+                                <?php if($new_report==1){echo 'Crea Nuovo Report';}//definisco l'operazione possibile sul report
+                                else{if($status_id<3){echo 'Invia Report';}else{echo 'Riprendi Elaborazione';}} ?></button>
+            </div>
+          </div>
+        </div>
+      </form>
 
 
     <!--<h4 style="margin-left:10px">Il tuo KAM è (kam_user) contattabile al numero (tel_cam)</h4> -->

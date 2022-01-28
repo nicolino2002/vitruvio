@@ -1,28 +1,22 @@
 
 :root {
-  --color-1: #ff8800;
-  --color-2: #a7e2ff;
+  --color-1: #ee7f09;
+  --color-2: #003967;
   --color-black: #000000;
+  --color-white: #ffffff;
+  --color-red: #ff0000;
 }
 
 
 .text-color-1{color:var(--color-1)}
 .text-color-2{color:var(--color-2)}
 
-.text-black{color: black}
-.btn-blu,.btn-blu:disabled
-{
-  color: white;
-  background-color: #044A92;
-  vertical-align:middle;
-}
-.btn-blu:hover,.btn-blu:disabled:hover
-{
-  color: white;
-  background-color: #044A92;
-  vertical-align:middle;
-}
+.bg-color-1{background-color: var(--color-1)}
+.bg-color-2{background-color: var(--color-2)}
 
-.text-red{color: red}
-.text-theme{color: #044e8f}
-.bg-theme{background-color: #044e8f}
+.text-black{color: var(--color-black)}
+.text-white{color: var(--color-white)}
+.text-red{color: var(--color-red)}
+
+.text-theme{color: var(--color-1)}
+.bg-theme{background-color: var(--color-1)}

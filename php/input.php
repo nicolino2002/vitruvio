@@ -19,7 +19,7 @@
 
 <html>
    <head>
-      <title>INPUT Template ver. 1.0</title>
+      <title>INPUT Page</title>
       <script type="text/javascript">
 
       function updateInput(ish,type){
@@ -52,132 +52,47 @@
 
       </script>
 
-      <style media="screen">
-        .mainform
-            {
-              width:90%;
-              height:20%;
-              margin-left:5%;
-              border-color: #044A92;
-            }
-        .forms {
-                width:30%;
-                height: 100%;
-                padding:2px 5px;
-                border: 3px solid #044A92;
-                display: inline-block;
-                float: left
-                text-align:center;
-                margin:8px;
-                margin-right:30px;
-            }
 
-            .th
-            {
-              padding:2px 2px;
-              height:30px;
-              width:100px;
-              v-align:middle;
-              text-align:center;
-			        font-weight: bold;
-            }
-            .man
-            {
-              padding:2px 2px;
-              height:30px;
-              width:100px;
-              v-align:middle;
-              text-align:center;
-			        font-weight: bold;
-              color:red;
-            }
-            .campo
-            {
-              padding:2px 2px;
-              height:30px;
-              width:80px;
-              v-align:middle;
-              text-align:center;
-            }
-            .btn-add,.btn-add:disabled
-            {
-              color: red;
-              background-color: #044A92;
-              vertical-align:middle;
-            }
-
-            .btn-blu,.btn-blu:disabled
-            {
-              color: white;
-              background-color: #044A92;
-              vertical-align:middle;
-            }
-            .btn-dismiss,.btn-dismiss:disabled
-            {
-              color: white;
-              background-color: grey;
-              vertical-align:middle;
-            }
-            .formtitle
-            {text-align: center;
-              margin-bottom: 20px;}
-            .l-5{
-              width: 50px;
-            }
-            .l-10{
-              width: 100px;
-            }
-            .bold{font-weight: bold}
-
-            #back.btn
-            {
-              color: white;
-              background-color: #044e8f;
-              max-width: 100%;
-              border-radius: 20px;
-              float: right;
-            }
-
-            #logout.btn
-            {
-              float: right;
-              color: #044e8f;
-              border: 2px solid #044e8f;
-              background-color: white;
-              max-width: 100%;
-              border-radius: 20px;
-            }
-            #logout.btn:hover
-            {
-              color: red;
-            }
-
-      </style>
 
 
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/colors.css" rel="stylesheet">
     <link href="../js/bootstrap.bundle.min.js">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
 
     </head>
 
    <body>
-    <div class="m-5 auto">
+     <div class="container-fluid" >
+        <div class="container pt-5 mb-3">
       <div class="row">
-        <div class="col-7">
-          <h1 style="color:#000"><?php if($year==2020){echo 'D';}else{echo 'E';} ?>. TAVOLA DI INPUT DELL'ANNO <?php echo $year; ?> </h1>
-          <a style="font-weight: bold; color: red;"> * Campi Obbligatori</a>
+        <div class="col-4">
+          <h1><?php if($year==2020){echo 'D';}else{echo 'E';} ?>. TAVOLA DI INPUT DELL'ANNO <?php echo $year; ?> </h1>
+          <p class="font-weight-bold text-red"> * Campi Obbligatori</p>
         </div>
-        <div class="col-4 offset-1 text-right">
-          <button type="button" class="btn text-right" id="help" onclick="php_mail('Utente: <?php echo $username ?>, Comune: <?php echo $town ?>, Form: <?php if($year==2020){echo 'D';}else{echo 'E';}?>','<?php echo $account;  ?>.')" ><a class="text-primary">Help?</a></button>
-          <button type="button" class="btn" id="logout" data-toggle="modal" data-target="#exampleModalCenter">
-            Esci
-          </button>
-          <a href="./welcome.php"><button class="btn mr-2" id="back"  type="submit">Indietro</button></a>
+        <div class="col-xl-1 offset-xl-5 ">
+          <button type="button" class="btn btn-link " onclick="php_mail('Utente: <?php echo $username ?>, Comune: <?php echo $town ?>, Form: D.','<?php echo $account; ?>')" >
+           <a class="text-primary">
+              Help?
+           </a>
+        </button>
         </div>
+
+        <div class="col-xl-1 ">
+          <a href="./welcome.php">
+            <button class="btn bg-color-2 text-white mr-2">
+             <i class="bi bi-arrow-90deg-left"></i>
+             Indietro
+            </button>
+          </a>
+        </div>
+
+
+          <div class="col-xl-1">
+             <button type="button" class="btn bg-color-1 text-white" data-toggle="modal" data-target="#exampleModalCenter">
+               Esci
+             </button>
+           </div>
       </div>
 
 
@@ -455,28 +370,8 @@
       <img src="../img/Esempio_tavole_D_E.jpg" alt="Input Sample" style="align:center;margin:10px"><br>
 
       <!-- Button trigger modal -->
-      <!-- Modal -->
-      <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLongTitle">Conferma</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              Sei sicuro di voler uscire?
-            </div>
-            <div class="modal-footer">
-              <button style="width:100px" type="button" id="back" class="btn" data-dismiss="modal">Annulla</button>
-              <form  action="./logout.php" method="post">
-                <button style="width:70px" type="submit" id="back" class="btn">Si</button>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
+      <?php include 'modal.php';  ?>
+
 
       <script type="text/javascript" src="../js/bootstrap.bundle.min.js"></script>
       <script type="text/javascript" src="../js/jquery-3.5.1.min.js"></script>
@@ -484,6 +379,7 @@
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
- </div>
+    </div>
+  </div>
   </body>
 </html>

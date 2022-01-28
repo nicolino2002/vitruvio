@@ -61,96 +61,15 @@
    <head>
       <title>Invio Files</title>
 
-          <style media="screen">
-          .container-fluid
-          {
-
-            background-color: white;
-
-          }
-
-          .col-sm-12,.col-xl-12,.col-xl-6,.col-xl-4
-          {
-              padding: 30px 30px;
-              border: 0.7px solid #d1d1d1;
-          }
-
-          #help.btn
-          {
-            color: white;
-            background-color: #044e8f;
-            max-width: 100%;
-            border-radius: 20px;
-            float: right;
-          }
-
-          #back.btn
-          {
-            color: white;
-            background-color: #044e8f;
-            max-width: 100%;
-            border-radius: 20px;
-            float: right;
-          }
-
-          #logout.btn
-          {
-            float: right;
-            color: #044e8f;
-            border: 2px solid #044e8f;
-            background-color: white;
-            max-width: 100%;
-            border-radius: 20px;
-          }
-          #logout.btn:hover
-          {
-            color: red;
-          }
-
-          .fields
-          {
-            max-width: 50%;
-            margin-right: 30%;
-            margin-top: 7px;
-            border:20px;
-          }
-
-
-          .auto
-          {margin: 10% auto}
-
-          .input-group
-          {
-            display: inline-block;
-          }
-
-          .title
-          {
-            background-color: red;
-          }
-
-          .space
-          {
-              margin-top: 5px;
-              margin-bottom: 5px;
-          }
-
-          .hidden-button{   background: transparent;
-            border: none !important;}
-
-          </style>
-
           <link href="../css/bootstrap.min.css" rel="stylesheet">
           <link href="../css/colors.css" rel="stylesheet">
           <link href="../js/bootstrap.bundle.min.js">
           <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
 
 
+          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+          <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
-
-
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
       <?php include('cdn.php'); ?>
       <script type="text/javascript">
       function refreshPage(){
@@ -187,12 +106,6 @@
    <body>
 
 
-
-
-
-
-
-
       <div class="container-fluid" style="background-color:#f5f5f5">
          <div class="container pt-5 mb-3">
            <div class="row">
@@ -201,13 +114,29 @@
 
                <?php echo " <input type='text' id='town' value= \"".$town."\"; hidden>";?>
              </div>
-             <div class="col-4 offset-4 text-right">
-               <button type="button" class="btn btn-help" onclick="php_mail('Utente: <?php echo $username ?>, Comune: <?php echo $town ?>, Form: C.','<?php echo $account;  ?>')" ><a class="text-primary">Help?</a></button>
-               <button type="button" class="btn" id="logout" data-toggle="modal" data-target="#exampleModalCenter">
-                 Esci
-               </button>
-               <a href="./welcome.php"><button class="btn mr-2" id="back"  type="submit">Indietro</button></a>
+             <div class="col-xl-1 offset-xl-5 ">
+               <button type="button" class="btn btn-link " onclick="php_mail('Utente: <?php echo $username ?>, Comune: <?php echo $town ?>, Form: C.','<?php echo $account; ?>')" >
+                <a class="text-primary">
+                   Help?
+                </a>
+             </button>
              </div>
+
+             <div class="col-xl-1 ">
+               <a href="./welcome.php">
+                 <button class="btn bg-color-2 text-white mr-2">
+                  <i class="bi bi-arrow-90deg-left"></i>
+                  Indietro
+                 </button>
+               </a>
+             </div>
+
+
+               <div class="col-xl-1">
+                  <button type="button" class="btn bg-color-1 text-white" data-toggle="modal" data-target="#exampleModalCenter">
+                    Esci
+                  </button>
+                </div>
            </div>
            <div class="row">
              <div class="col-12">
@@ -237,7 +166,7 @@
                <?php //echo $account; ?>
                ')">-->
                <?php $index=1;?>
-                  <div class="col-sm-12 col-xl-6">
+                  <div class="col-sm-12 col-xl-6 p-3 border">
                     <form action="./upload_file.php" method = "post" enctype="multipart/form-data">
                     <label class="text-red font-weight-bold"><?php echo $index;$index++; ?>. Caricare PEF GREZZO 2020 in formato excel</label>
                     <div class="input-group">
@@ -275,7 +204,7 @@
                       </div>
 
 
-                  <div class="col-sm-12 col-xl-6">
+                  <div class="col-sm-12 col-xl-6 p-3 border">
                     <form action="./upload_file.php" method = "post" enctype="multipart/form-data">
                     <label class="text-red font-weight-bold"><?php echo $index;$index++; ?>. Caricare relazione di accompagnamento al PEF COMUNE 2020</label>
                     <div class="input-group">
@@ -306,7 +235,7 @@
                   </form>
                   </div>
 
-                  <div class="col-sm-12 col-xl-6">
+                  <div class="col-sm-12 col-xl-6 p-3 border">
                     <form action="./upload_file.php" method = "post" enctype="multipart/form-data">
                     <label class="text-red font-weight-bold"><?php echo $index;$index++; ?>. Caricare PEF GREZZO 2021 in formato excel</label>
                     <div class="input-group">
@@ -337,7 +266,7 @@
                   </form>
                 </div>
 
-                  <div class="col-sm-12 col-xl-6">
+                  <div class="col-sm-12 col-xl-6 p-3 border">
                     <form action="./upload_file.php" method = "post" enctype="multipart/form-data">
 
                     <label class="text-red font-weight-bold"><?php echo $index;$index++; ?>. Caricare relazione di accompagnamento al PEF COMUNE 2021</label>
@@ -370,7 +299,7 @@
                   </form>
                 </div>
 
-                  <div class="col-sm-12 col-xl-6">
+                  <div class="col-sm-12 col-xl-6 p-3 border">
                     <form action="./upload_file.php" method = "post" enctype="multipart/form-data">
 
                     <label class="text-red font-weight-bold"><?php echo $index;$index++; ?>. Caricare istruttoria approvazione ETC (Ager) COMUNE 2020</label>
@@ -402,7 +331,7 @@
                   </form>
                 </div>
 
-                  <div class="col-sm-12 col-xl-6">
+                  <div class="col-sm-12 col-xl-6 p-3 border">
                     <form action="./upload_file.php" method = "post" enctype="multipart/form-data">
 
                     <label class="text-red font-weight-bold"><?php echo $index;$index++; ?>. Caricare istruttoria approvazione ETC (Ager) COMUNE 2021</label>
@@ -435,7 +364,7 @@
                   </form>
                 </div>
 
-                  <div class="col-sm-12 col-xl-6 mb-5">
+                  <div class="col-sm-12 col-xl-6 border p-3 mb-5">
                     <form action="./upload_file.php" method = "post" enctype="multipart/form-data">
 
                     <label class="text-red font-weight-bold"><?php echo $index;$index++; ?>. Caricare contratto con il gestore sei servizi RU</label>
@@ -468,7 +397,7 @@
                   </form>
                 </div>
 
-                  <div class="col-sm-12 col-xl-6 mb-5">
+                  <div class="col-sm-12 col-xl-6 border p-3 p-3 mb-5">
                     <form action="./upload_file.php" method = "post" enctype="multipart/form-data">
 
                     <label class="text-red font-weight-bold"><?php echo $index;$index++; ?>. Caricare delibera di approvazione della TARI 2021</label>
@@ -505,28 +434,8 @@
                </div>
 
 
-     <!-- Modal -->
-     <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-       <div class="modal-dialog modal-dialog-centered" role="document">
-         <div class="modal-content">
-           <div class="modal-header">
-             <h5 class="modal-title" id="exampleModalLongTitle">Conferma</h5>
-             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-               <span aria-hidden="true">&times;</span>
-             </button>
-           </div>
-           <div class="modal-body">
-             Sei sicuro di voler uscire?
-           </div>
-           <div class="modal-footer">
-             <button style="width:100px" type="button" id="back" class="btn" data-dismiss="modal">Annulla</button>
-             <form  action="./logout.php" method="post">
-               <button style="width:70px" type="submit" id="back" class="btn">Si</button>
-             </form>
-           </div>
-         </div>
-       </div>
-     </div>
+               <?php include 'modal.php';  ?>
+
 
      <script type="text/javascript" src="../js/bootstrap.min.js"></script>
      <script type="text/javascript" src="../js/jquery-3.5.1.min.js"></script>

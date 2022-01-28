@@ -59,37 +59,7 @@
   border: 0.7px solid #d1d1d1;
 
 }
-#help.btn
-{
-  color: white;
-  background-color: #044e8f;
-  max-width: 100%;
-  border-radius: 20px;
-  float: right;
-}
 
-#back.btn
-{
-  color: white;
-  background-color: #044e8f;
-  max-width: 100%;
-  border-radius: 20px;
-  float: right;
-}
-
-#logout.btn
-{
-  float: right;
-  color: #044e8f;
-  border: 2px solid #044e8f;
-  background-color: white;
-  max-width: 100%;
-  border-radius: 20px;
-}
-#logout.btn:hover
-{
-  color: red;
-}
 
 .fields
 {

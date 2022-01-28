@@ -4,7 +4,7 @@ $subject = trim($_POST['subject']);
 $to = trim($_POST['to']);
 $cc = trim($_POST['cc']);
 $message = trim($_POST['message']);
-$sender = "assistenza@bintobit.com";
+$sender = "vitruvio@bintobit.com";
 
 error_reporting(E_ALL);
 
@@ -43,9 +43,9 @@ $msg .= "\n--$mail_boundary--\n";
 ini_set("sendmail_from", $sender);
 
 // Send the message, the fifth paramter set the Return-Path "-f$sender" on Linux Hosting
-if (mail($to, $subject, $msg, $headers, "-f$sender")) { 
+if (mail($to, $subject, $msg, $headers, "-f$sender")) {
     echo "Mail sent successfully!";
-} else { 
+} else {
     echo "<br><br>Mail delivery failed!";
 }
 ?>
